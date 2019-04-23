@@ -1,15 +1,16 @@
 <template>
-<div class="demo">
-  hhhh
-</div>
+  <div>
+    <router-view/>
+    <FooterGuide/>
+  </div>
 </template>
 <script>
+import FooterGuide from "./components/FooterGuide/FooterGuide";
+
 export default {
-  name: "app"
+  components: {
+    FooterGuide
+  }
 };
 </script>
-<style lang='stylus' rel='stylesheet/stylus' scoped>
-  .demo
-    font-size 200px
-    color red
-</style>
+<style lang='stylus' rel='stylesheet/stylus' scoped></style>
