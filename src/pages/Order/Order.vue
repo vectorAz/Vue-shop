@@ -1,15 +1,8 @@
 <template>
-<div class="demo">
-  hhhh
-</div>
 </template>
 <script>
 export default {
-  name: "app"
-};
+}
 </script>
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-  .demo
-    font-size 200px
-    color red
 </style>
