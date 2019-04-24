@@ -1,15 +1,15 @@
 <template>
- <footer>
+ <footer v-show='$route.meta.isFootshow'>
       <ul class="List">
         <router-link to='/msite' class="button" :class="{on:$route.path==='/msite'}">
           <span><i class="iconfont icon-shouye- "></i></span>
           <span>首页</span>
         </router-link>
-        <router-link to='/order' class="button" :class="{on:$route.path==='/order'}">
+        <router-link to='/search' class="button" :class="{on:$route.path==='/search'}">
           <span><i class="iconfont icon-sousuo"></i></span>
           <span>搜索</span>
         </router-link>
-        <router-link to='/search' class="button" :class="{on:$route.path==='/search'}">
+        <router-link to='/order' class="button" :class="{on:$route.path==='/order'}">
           <span><i class="iconfont icon-gouwuche"></i></span>
           <span>购物车</span>
         </router-link>
