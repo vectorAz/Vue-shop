@@ -2,7 +2,7 @@
   <header>
     <slot name="left"></slot>
     <div class="heard-title">
-      <span>{{title}}</span>
+      <span >{{title}}</span>
     </div>
     <slot name="right"></slot>
   </header>
@@ -36,8 +36,13 @@ export default {
         margin-left 20px
       .heard-title
         color #fff
-        flex 1
+        flex 2
         text-align center
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size 16px
+       
       .login-register
         flex 1
         margin-right 20px
