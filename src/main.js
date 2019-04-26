@@ -3,8 +3,10 @@ import App from './App.vue'
 import  router  from './router/index'
 import Header from './components/header/header.vue'
 import store from './store/index'
+import Star from './components/stars/index.vue'
 Vue.config.productionTip = false
-Vue.component('Header',Header) //注册全局组件
+Vue.component('Header',Header) //注册全局头部组件
+Vue.component('Star',Star) //注册全局星星组件
 new Vue({
   el:'#app',
   render: h => h(App),

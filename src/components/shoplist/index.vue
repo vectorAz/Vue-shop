@@ -12,13 +12,7 @@
           </ul>
         </div>
         <div class="inner-center">
-          <ul class="star-list">
-            <li class="stars onstars"></li>
-            <li class="stars onstars"></li>
-            <li class="stars onstars"></li>
-            <li class="stars halfstars"></li>
-            <li class="stars offstars"></li>
-          </ul>
+          <Star :score='item.rating' :size='24'/>
           <span class="Price">{{item.rating}}</span>
           <span class="solds">月售{{item.recent_order_num}}</span>
           <div class="center-right">
@@ -61,6 +55,7 @@ export default {
   background #ffffff
   padding 15px 8px
   li
+    bottom-border-1px(#eee)
     clearFix()
     display flex
     margin-bottom 5px
