@@ -7,7 +7,7 @@ export default function Ajax(url, data = {}, method = 'GET') {
         params: data
       })
     } else {
-      prmoise = axios.get(url, data)
+      prmoise = axios.post(url, data)
     }
     prmoise.then(
       res => {

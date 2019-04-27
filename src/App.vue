@@ -12,6 +12,7 @@ export default {
   },
   mounted(){
     this.$store.dispatch('reqAddress')
+    this.$store.dispatch('getUSER')
   }
 
 

@@ -4,6 +4,6 @@ export default {
   latitude:'40.10038', //纬度
   address:{},//地址
   categorys:[],//食品列表
-  shops:[]//商家列表
-
+  shops:[],//商家列表
+  userINfo:{} //登录用户信息对象
 }
