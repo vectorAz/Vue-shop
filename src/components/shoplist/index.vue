@@ -1,6 +1,6 @@
 <template>
   <ul class="shoplist" v-if="shops.length">
-    <li v-for="(item, index) in shops" :key="index">
+    <li v-for="(item, index) in shops" :key="index" @click="$router.push('/Shops')">
       <div class="shopleft">
         <img :src="'https://fuss10.elemecdn.com'+item.image_path" alt="1">
       </div>
@@ -12,7 +12,7 @@
           </ul>
         </div>
         <div class="inner-center">
-          <Star :score='item.rating' :size='24'/>
+          <Star :score="item.rating" :size="24"/>
           <span class="Price">{{item.rating}}</span>
           <span class="solds">月售{{item.recent_order_num}}</span>
           <div class="center-right">
@@ -45,9 +45,13 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["shops"])
-  }
-};
+    ...mapState(
+      {
+         shops: state => state.msite.shops,
+      }
+    )
+}
+}
 </script>
 <style lang='stylus' rel='stylesheet/stylus' scoped>
 @import '../../common/stulus/mixins.styl'

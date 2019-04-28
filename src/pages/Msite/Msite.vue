@@ -8,7 +8,7 @@
       </div>
     </Header>
     <div class="swiper-container">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" v-if="categorysArr.length>0">
         <div class="swiper-slide" v-for="(catgory, index) in categorysArr" :key="index">
           <a href="#" v-for="(item, index) in catgory" :key="index">
             <img :src="'https://fuss10.elemecdn.com'+item.image_url" alt="1">
@@ -16,6 +16,7 @@
           </a>
         </div>
       </div>
+      <img src="./msite_back.svg" alt="111" v-else>
       <div class="swiper-pagination"></div>
     </div>
     <div class="content-inner">
@@ -66,18 +67,21 @@ export default {
   },
 
   computed: {
-    ...mapState(["address", "categorys"]),
+    ...mapState({
+      address: state => state.msite.address,
+      categorys: state => state.msite.categorys
+    }),
 
     categorysArr() {
       const bigarr = [];
       let smallArr = [];
       this.categorys.forEach(item => {
         if (smallArr.length === 0) {
-          bigarr.push(smallArr);
+          bigarr.push(smallArr); //在一开始就将小数组的地址值存入大数组
         }
         smallArr.push(item);
         if (smallArr.length === 8) {
-          smallArr = [];
+          smallArr = []; //重新创建一个新的地址值存入大数组
         }
       });
       return bigarr;

@@ -24,3 +24,12 @@ export const reqUSER=()=>Ajax(BASE+'/userinfo');
 
 //loginout
 export const loginout=()=>Ajax(BASE+'/logout');
+
+//获取商品信息
+export const getGoods=()=>Ajax('/goods');
+
+//评论
+export const getRatings=()=>Ajax('/ratings');
+
+//获取商家信息
+export const getInfo=()=>Ajax('/info');

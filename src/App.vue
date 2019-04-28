@@ -10,9 +10,10 @@ export default {
   components: {
     FooterGuide
   },
-  mounted(){
-    this.$store.dispatch('reqAddress')
+ async mounted(){
+    this.$store.dispatch('reqAddress') //去vuex的所有模块中查找对应的action
     this.$store.dispatch('getUSER')
+  
   }
 
 

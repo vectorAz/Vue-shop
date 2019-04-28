@@ -104,7 +104,11 @@ import { mapState } from "vuex";
 import { MessageBox } from "mint-ui";
 export default {
   computed: {
-    ...mapState(["userINfo"])
+    ...mapState(
+     {
+        userINfo:state=>state.user.userINfo
+     }
+    )
   },
   methods: {
     loginOUT() {
@@ -120,6 +124,7 @@ export default {
 .profile // 我的
   top-border-1px(#fff)
   width 100%
+  overflow hidden
   .profile-number
     margin-top 45.5px
     .profile-link

@@ -12,7 +12,8 @@
         <form>
           <div :class="{on:isshow}">
             <section class="login_message">
-              <input type="tel" maxlength="11" placeholder="手机号" v-model="phone">
+              <input type="tel" maxlength="11" placeholder="手机号" name="myphone" v-model="phone" v-validate="{required:true,regex:/^1\d{10}$/}" >
+              <span style="color:red" v-show="errors.has('myphone')">{{errors.first('myphone')}}</span>
               <button
                 :disabled="!isrightPH||time>0"
                 class="get_verification"
@@ -21,7 +22,8 @@
               >{{time>0?`${time}s`:'获取验证码'}}</button>
             </section>
             <section class="login_verification">
-              <input type="tel" maxlength="8" placeholder="验证码" v-model="code">
+              <input type="tel" maxlength="8" placeholder="验证码" v-model="code"   v-validate="'required'" name="Vercode">
+              <span style="color:red" v-show="errors.has('Vercode')">{{errors.first('Vercode')}}</span>
             </section>
             <section class="login_hint">
               温馨提示：未注册硅谷外卖帐号的手机号，登录时将自动注册，且代表已同意
